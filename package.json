@@ -9,9 +9,12 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
+    "codemirror": "^5.64.0",
     "core-js": "^3.6.5",
     "element-ui": "^2.15.6",
+    "sql-formatter": "^4.0.2",
     "vue": "^2.6.11",
+    "vue-codemirror": "^4.0.6",
     "vue-router": "^3.5.3",
     "vuex": "^3.6.2"
   },

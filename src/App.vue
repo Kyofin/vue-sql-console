@@ -1,35 +1,15 @@
 <template>
   <div id="app">
-    <el-container>
-      <el-header>
-        <h1>头部</h1>
-      </el-header>
-      <el-container>
-        <el-aside width="200px">
-          <p>
-            <!-- 使用 router-link 组件来导航. -->
-            <!-- 通过传入 `to` 属性指定链接. -->
-            <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
-            <router-link to="/home">Go to Home Page</router-link>
-            <br>
-            <router-link to="/user">Go to User Page</router-link>
-          </p>
-        </el-aside>
-        <el-main>
-          <!-- 路由出口 -->
-          <!-- 路由匹配到的组件将渲染在这里 -->
-          <router-view></router-view>
-        </el-main>
-      </el-container>
-    </el-container>
+    <sql/>
 
   </div>
 </template>
 
 <script>
+  import sql from './components/sql'
 export default {
   name: "App",
-  components: {},
+  components: {sql},
 };
 </script>
 
