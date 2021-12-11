@@ -1,16 +1,39 @@
 <template>
   <div id="app">
-    <sql/>
+    <el-container>
+      <el-header>Header
+        <el-button @click="goToProject">项目管理</el-button>
+        <el-button @click="goPlayground">PlayGround</el-button>
+      </el-header>
+      <el-main>
+        <!-- 路由匹配到的组件将渲染在这里 -->
+        <router-view></router-view>
+      </el-main>
+    </el-container>
+
 
   </div>
 </template>
 
 <script>
-  import sql from './components/sql'
-export default {
-  name: "App",
-  components: {sql},
-};
+  export default {
+    name: "App",
+    components: {},
+    data() {
+      return {}
+    },
+    methods: {
+      goToProject() {
+        this.$router.push({path: "/project"})
+      },
+      goPlayground() {
+        this.$router.push({path: "/playground"})
+      }
+    },
+    mounted() {
+      console.log('router',this.$router)
+    }
+  };
 </script>
 
 <style>
@@ -20,42 +43,24 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
+    margin-top: 10px;
   }
 
-
-  .el-header, .el-footer {
+  .el-header {
     background-color: #B3C0D1;
     color: #333;
-    text-align: center;
+    text-align: left;
     line-height: 60px;
   }
 
-  .el-aside {
-    background-color: #D3DCE6;
-    color: #333;
-    text-align: center;
-    line-height: 200px;
-  }
 
   .el-main {
     background-color: #E9EEF3;
     color: #333;
     text-align: center;
-    line-height: 160px;
+    line-height: 660px;
   }
 
-  body > .el-container {
-    margin-bottom: 40px;
-  }
 
-  .el-container:nth-child(5) .el-aside,
-  .el-container:nth-child(6) .el-aside {
-    line-height: 260px;
-  }
-
-  .el-container:nth-child(7) .el-aside {
-    line-height: 320px;
-  }
 
 </style>
