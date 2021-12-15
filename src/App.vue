@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <el-container>
-      <el-header>Header
-        <el-button @click="goToProject">项目管理</el-button>
+      <el-header>
+        <i class="el-icon-share">Logo</i>
         <el-button @click="goPlayground">PlayGround</el-button>
+        <el-button @click="goToSession">会话管理</el-button>
       </el-header>
       <el-main>
         <!-- 路由匹配到的组件将渲染在这里 -->
@@ -23,8 +24,8 @@
       return {}
     },
     methods: {
-      goToProject() {
-        this.$router.push({path: "/project"})
+      goToSession() {
+        this.$router.push({path: "/session"})
       },
       goPlayground() {
         this.$router.push({path: "/playground"})
@@ -32,6 +33,8 @@
     },
     mounted() {
       console.log('router',this.$router)
+      // 默认加载playground组件
+      this.$router.push({path: "/playground"})
     }
   };
 </script>

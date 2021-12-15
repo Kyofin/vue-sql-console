@@ -1,15 +1,22 @@
 <template>
 
    <el-container>
-     <el-aside width="200px">Aside</el-aside>
-     <el-main>Main</el-main>
+     <el-aside width="300px">
+         <Schema/>
+     </el-aside>
+       <el-container>
+           <el-header height="300px">sql编辑</el-header>
+           <el-main >数据预览</el-main>
+       </el-container>
   </el-container>
 
 </template>
 
 <script>
+    import Schema from '@/views/playground/schema'
     export default {
         name: "playground",
+        components:{Schema},
         data(){
             return {}
         },

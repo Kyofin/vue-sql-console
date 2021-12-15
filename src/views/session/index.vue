@@ -1,5 +1,5 @@
 <template>
-    <h1>project页面</h1>
+    <h1>会话管理页面</h1>
 </template>
 
 <script>
