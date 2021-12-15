@@ -6,7 +6,9 @@
      </el-aside>
        <el-container>
            <el-header height="300px">sql编辑</el-header>
-           <el-main >数据预览</el-main>
+           <el-main >
+               <Preview/>
+           </el-main>
        </el-container>
   </el-container>
 
@@ -14,9 +16,10 @@
 
 <script>
     import Schema from '@/views/playground/schema'
+    import Preview from '@/views/playground/preview'
     export default {
         name: "playground",
-        components:{Schema},
+        components:{Schema,Preview},
         data(){
             return {}
         },
