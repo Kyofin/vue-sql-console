@@ -4,7 +4,8 @@
             <Schema/>
         </div>
         <div class="rightLayout" >
-            <div class="editorLayout" >sql编辑器</div>
+            <div>工具栏： <el-button>运行</el-button></div>
+            <div class="editorLayout" ><Editor/></div>
             <div class="previewLayout" >
                 <Preview/>
             </div>
@@ -16,10 +17,11 @@
 
 <script>
     import Schema from '@/views/playground/schema'
+    import Editor from '@/views/playground/editor'
     import Preview from '@/views/playground/preview'
     export default {
         name: "playground",
-        components:{Schema,Preview},
+        components:{Schema,Preview,Editor},
         data(){
             return {}
         },
@@ -37,13 +39,14 @@
     }
 
     .rightLayout {
-        display: flex; flex-grow:1; flex-direction:column
+        display: flex; flex-grow:1; flex-direction:column;
+        overflow: hidden;
     }
     .editorLayout{
-        height: 40%;
+        height: 55%;
     }
     .previewLayout{
-        height: 60%;
+        height: 40%;
         padding: 10px;
     }
 </style>

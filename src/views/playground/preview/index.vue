@@ -1,10 +1,12 @@
 <template>
-    <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane label="Table Schema" name="tableSchema">
+    <el-tabs v-model="activeName" @tab-click="handleClick" class="pre-tabs">
+        <el-tab-pane label="Table Schema" name="tableSchema" class="pre-tab-pane">
             <el-table
                     :data="schemaData"
                     border
-                    style="width: 100%">
+                    max-height="100%"
+                    class="pre-table"
+                    style="width: 100%;">
                 <el-table-column
                         prop="columnName"
                         label="column_name"
@@ -21,10 +23,11 @@
                 </el-table-column>
             </el-table>
         </el-tab-pane>
-        <el-tab-pane label="Data Preview" name="dataPreview">
+        <el-tab-pane label="Data Preview" name="dataPreview" class="pre-tab-pane">
             <el-table
                     :data="tableData"
                     border
+                    class="pre-table"
                     style="width: 100%">
                 <el-table-column
                         prop="date"
@@ -67,6 +70,34 @@
                     date: '2016-05-03',
                     name: '王小虎',
                     address: '上海市普陀区金沙江路 1516 弄'
+                },{
+                    date: '2016-05-03',
+                    name: '王小虎',
+                    address: '上海市普陀区金沙江路 1516 弄'
+                },{
+                    date: '2016-05-03',
+                    name: '王小虎',
+                    address: '上海市普陀区金沙江路 1516 弄'
+                },{
+                    date: '2016-05-03',
+                    name: '王小虎',
+                    address: '上海市普陀区金沙江路 1516 弄'
+                },{
+                    date: '2016-05-03',
+                    name: '王小虎',
+                    address: '上海市普陀区金沙江路 1516 弄'
+                },{
+                    date: '2016-05-03',
+                    name: '王小虎',
+                    address: '上海市普陀区金沙江路 1516 弄'
+                },{
+                    date: '2016-05-03',
+                    name: '王小虎',
+                    address: '上海市普陀区金沙江路 1516 弄'
+                },{
+                    date: '2016-05-03',
+                    name: '王小虎',
+                    address: '上海市普陀区金沙江路 1516 弄'
                 }],
                 schemaData: [
                     {
@@ -94,6 +125,22 @@
     }
 </script>
 
-<style scoped>
+<style>
 
+    .el-tabs__content{
+        height: calc(100% - 55px)!important;
+        overflow: auto;
+    }
+    .pre-table{
+        height: 100%;
+        overflow: auto !important;
+    }
+       .pre-tabs{
+           height: 100%;
+           box-sizing: border-box;
+       }
+    .pre-tab-pane{
+        height: 100%;
+        box-sizing: border-box;
+    }
 </style>

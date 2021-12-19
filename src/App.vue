@@ -2,9 +2,10 @@
   <div id="app">
     <el-container>
       <el-header>
-        <i class="el-icon-share">Logo</i>
-        <el-button @click="goPlayground">PlayGround</el-button>
-        <el-button @click="goToSession">会话管理</el-button>
+        <i style="background-color: #2e81ff;color: #ffffff;margin-left: 10px;margin-right: 10px;" class="el-icon-share">Logo</i>
+        <!--        :class用于样式和变量绑定  -->
+        <div class="btn" :class="{'selected':activeMenu==1}" @click="goPlayground">PlayGround</div>
+        <div class="btn" :class="{'selected':activeMenu==2}" @click="goToSession">会话管理</div>
       </el-header>
       <el-main>
         <!-- 路由匹配到的组件将渲染在这里 -->
@@ -21,14 +22,18 @@
     name: "App",
     components: {},
     data() {
-      return {}
+      return {
+        activeMenu:1
+      }
     },
     methods: {
       goToSession() {
         this.$router.push({path: "/session"})
+        this.activeMenu=2
       },
       goPlayground() {
         this.$router.push({path: "/playground"})
+        this.activeMenu=1
       }
     },
     mounted() {
@@ -58,7 +63,7 @@
   }
 
   .el-header {
-    background-color: #B3C0D1;
+    background-color: #031525;
     color: #333;
     text-align: left;
     line-height: 60px;
@@ -73,6 +78,23 @@
     /*声明important，替代el-main原来的padding*/
     padding:0 !important;
     /*line-height: 660px;*/
+  }
+  .btn{
+    /*行内布局*/
+    display:inline-flex;
+    /*里面的元素水平居中*/
+    justify-content: center;
+    /*里面的元素垂直居中*/
+    align-items: center;
+    background-color: #001529;
+    color: #9da3ab;
+    height: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box
+  }
+  .selected{
+    background-color: #2e81ff;
+    color: #ffffff;
   }
 
 
