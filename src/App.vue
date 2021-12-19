@@ -40,13 +40,21 @@
 </script>
 
 <style>
+  body{
+    margin:0;
+    padding: 0;
+    /*占满屏幕100%*/
+    height: 100vh;
+  }
   #app {
+    height: 100vh;
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 10px;
+    display: flex;
+    /*margin-top: 10px;*/
   }
 
   .el-header {
@@ -54,6 +62,7 @@
     color: #333;
     text-align: left;
     line-height: 60px;
+    height: 60px;
   }
 
 
@@ -61,7 +70,9 @@
     background-color: #E9EEF3;
     color: #333;
     text-align: center;
-    line-height: 660px;
+    /*声明important，替代el-main原来的padding*/
+    padding:0 !important;
+    /*line-height: 660px;*/
   }
 
 

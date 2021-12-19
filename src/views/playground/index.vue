@@ -1,16 +1,16 @@
 <template>
+    <div style="height: 100%;  display: flex; flex-direction:row">
+        <div class="leftLayout">
+            <Schema/>
+        </div>
+        <div class="rightLayout" >
+            <div class="editorLayout" >sql编辑器</div>
+            <div class="previewLayout" >
+                <Preview/>
+            </div>
+        </div>
+    </div>
 
-   <el-container>
-     <el-aside width="300px">
-         <Schema/>
-     </el-aside>
-       <el-container>
-           <el-header height="300px">sql编辑</el-header>
-           <el-main >
-               <Preview/>
-           </el-main>
-       </el-container>
-  </el-container>
 
 </template>
 
@@ -30,17 +30,19 @@
 </script>
 
 <style scoped>
-    .el-aside {
-        background-color: #D3DCE6;
-        color: #333;
-        text-align: center;
-        line-height: 200px;
+    .leftLayout {
+        flex-shrink: 0;
+        width: 250px;
+        background-color: red;
     }
 
-    .el-main {
-        background-color: #E9EEF3;
-        color: #333;
-        text-align: center;
-        line-height: 660px;
+    .rightLayout {
+        display: flex; flex-grow:1; flex-direction:column
+    }
+    .editorLayout{
+        height: 40%; background-color: blue
+    }
+    .previewLayout{
+        height: 60%; background-color: green
     }
 </style>
