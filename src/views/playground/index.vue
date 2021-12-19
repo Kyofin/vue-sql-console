@@ -33,16 +33,17 @@
     .leftLayout {
         flex-shrink: 0;
         width: 250px;
-        background-color: red;
+        background-color: #ffffff;
     }
 
     .rightLayout {
         display: flex; flex-grow:1; flex-direction:column
     }
     .editorLayout{
-        height: 40%; background-color: blue
+        height: 40%;
     }
     .previewLayout{
-        height: 60%; background-color: green
+        height: 60%;
+        padding: 10px;
     }
 </style>
